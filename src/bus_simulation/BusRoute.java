@@ -1,7 +1,7 @@
 package bus_simulation;
 
 public class BusRoute {
-	static final byte MIN_STOPS = 3, MAX_STOPS = 3;
+	static final byte MIN_STOPS = 10, MAX_STOPS = 20;
 //	static final LinkedList<BusStop> ROUTES = new LinkedList<BusStop>();
 	final BusStop HEAD_STOP = BusStop.randomStop();
 	byte STOP_COUNT;

@@ -3,7 +3,7 @@ package bus_simulation;
 import bus_simulation.Passenger.PASSENGER_TYPE;
 
 public class Bus {
-	public static final byte MAX_CAPACITY = 10;
+	public static final byte MAX_CAPACITY = 40;
 	public static final double NO_EXIT_CHANCE = 0.10;
 
 	public Passenger.List passengerList = new Passenger.List();

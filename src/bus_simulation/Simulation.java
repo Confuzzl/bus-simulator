@@ -20,10 +20,13 @@ public class Simulation {
 //		}
 
 		BusRoute route = new BusRoute();
-		BusStop current = route.HEAD_STOP;
-		for (int i = 0; i < route.STOP_COUNT; i++) {
-			System.out.println(current);
-			current = current.next;
+
+//		for (int i = 0; i < route.STOP_COUNT; i++) {
+//			System.out.println(current);
+//			current = current.next;
+//		}
+		for (BusStop current = route.HEAD_STOP; current != null; current = current.next) {
+//			System.out.println(current);
 		}
 //		System.out.println(route.HEAD_STOP.passengerList);
 //		Bus bus = new Bus();
