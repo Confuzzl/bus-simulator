@@ -11,65 +11,85 @@ public class Passenger {
 //				add(passenger);
 //			});
 //		}
-		void addAll(final List passengerList) {
-			ADULT_COUNT += passengerList.ADULT_COUNT;
-			ELDERLY_COUNT += passengerList.ELDERLY_COUNT;
-			STUDENT_COUNT += passengerList.STUDENT_COUNT;
+		public void addAll(final List passengerList) {
+			add(PASSENGER_TYPE.ADULT, passengerList.ADULT_COUNT);
+			add(PASSENGER_TYPE.ELDERLY, passengerList.ELDERLY_COUNT);
+			add(PASSENGER_TYPE.STUDENT, passengerList.STUDENT_COUNT);
 		}
 
-		void add(final PASSENGER_TYPE passenger) {
+		public void reset() {
+			removeAll(PASSENGER_TYPE.ADULT);
+			removeAll(PASSENGER_TYPE.ELDERLY);
+			removeAll(PASSENGER_TYPE.STUDENT);
+		}
+
+		public void add(final PASSENGER_TYPE passenger) {
+			add(passenger, 1);
+		}
+
+		public void add(final PASSENGER_TYPE passenger, final int n) {
 			switch (passenger) {
-			case ADULT -> ADULT_COUNT++;
-			case ELDERLY -> ELDERLY_COUNT++;
-			case STUDENT -> STUDENT_COUNT++;
+			case ADULT -> ADULT_COUNT += n;
+			case ELDERLY -> ELDERLY_COUNT += n;
+			case STUDENT -> STUDENT_COUNT += n;
 			}
 		}
 
-		void removeAll() {
-			removeAllAdults();
-			removeAllElderly();
-			removeAllStudents();
+		public void remove(final PASSENGER_TYPE passenger) {
+			remove(passenger, 1);
 		}
 
-		void removeAdult() {
-			removeAdult(1);
+		public void remove(final PASSENGER_TYPE passenger, final int n) {
+			if (switch (passenger) {
+			case ADULT -> ADULT_COUNT;
+			case ELDERLY -> ELDERLY_COUNT;
+			case STUDENT -> STUDENT_COUNT;
+			} - n < 0) {
+				throw new ArithmeticException();
+			}
+			add(passenger, -n);
 		}
 
-		void removeAdult(final int n) {
-			ADULT_COUNT -= n;
+		public void removeAll(final PASSENGER_TYPE passenger) {
+			remove(passenger, switch (passenger) {
+			case ADULT -> ADULT_COUNT;
+			case ELDERLY -> ELDERLY_COUNT;
+			case STUDENT -> STUDENT_COUNT;
+			});
 		}
 
-		void removeAllAdults() {
-			ADULT_COUNT = 0;
+		public void removeRandom() {
+			final double ADULT_CHANCE = ADULT_COUNT / (double) size(), ELDERLY_CHANCE = ELDERLY_COUNT / (double) size(),
+					STUDENT_CHANCE = STUDENT_COUNT / (double) size();
+			if (Util.chance(ADULT_CHANCE + ELDERLY_CHANCE)) {
+				if (Util.chance(ADULT_CHANCE / (ADULT_CHANCE + ELDERLY_CHANCE))) {
+					remove(PASSENGER_TYPE.ADULT);
+				} else {
+					remove(PASSENGER_TYPE.ELDERLY);
+				}
+			} else {
+				remove(PASSENGER_TYPE.STUDENT);
+			}
 		}
 
-		void removeElderly() {
-			removeElderly(1);
+		public void transferTo(final List other, final PASSENGER_TYPE passenger) {
+			transferTo(other, passenger, 1);
 		}
 
-		void removeElderly(final int n) {
-			ELDERLY_COUNT -= n;
+		public void transferTo(final List other, final PASSENGER_TYPE passenger, final int n) {
+			remove(passenger, n); // throws if 0
+			other.add(passenger, n);
 		}
 
-		void removeAllElderly() {
-			ELDERLY_COUNT = 0;
-		}
-
-		void removeStudent() {
-			removeStudent(1);
-		}
-
-		void removeStudent(final int n) {
-			STUDENT_COUNT -= n;
-		}
-
-		void removeAllStudents() {
-			STUDENT_COUNT = 0;
-		}
-
-		int size() {
+		public int size() {
 			return ADULT_COUNT + ELDERLY_COUNT + STUDENT_COUNT;
 		}
+
+		@Override
+		public String toString() {
+			return String.format("[%d ADULTS, %d ELDERLY, %d STUDENTS]", ADULT_COUNT, ELDERLY_COUNT, STUDENT_COUNT);
+		}
+
 	}
 
 	public enum PASSENGER_TYPE {
@@ -77,7 +97,7 @@ public class Passenger {
 
 		public final double FARE;
 
-		PASSENGER_TYPE(final double FARE) {
+		private PASSENGER_TYPE(final double FARE) {
 			this.FARE = FARE;
 		}
 	}
