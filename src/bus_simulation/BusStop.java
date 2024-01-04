@@ -10,15 +10,29 @@ public class BusStop {
 
 	public static final byte MIN_TIME = 2, MAX_TIME = 5;
 
-	public Bus currentBus = null;
+//	public Bus currentBus = null;
 	public final Passenger.List passengerList = new Passenger.List();
-	public String name;
+	public final String name;
+
+	public final BusRoute parent;
+	public final boolean isDepot;
 
 	public BusStop next = null;
-	public final byte timeToNext = (byte) Util.random(MIN_TIME, MAX_TIME);
+	public final byte timeToNext;
 
-	public BusStop(final String name) {
+	public boolean isTail() {
+		return next == null;
+	}
+
+	public BusStop(final BusRoute parent, final String name, final byte timeToNext) {
+		this(parent, name, timeToNext, false);
+	}
+
+	public BusStop(final BusRoute parent, final String name, final byte timeToNext, final boolean isDepot) {
+		this.parent = parent;
 		this.name = name;
+		this.timeToNext = timeToNext;
+		this.isDepot = isDepot;
 	}
 
 	public void update() {
@@ -38,8 +52,13 @@ public class BusStop {
 		}
 	}
 
-	public static BusStop randomStop() {
-		return new BusStop(StreetNames.getRandom());
+	public static BusStop randomStop(final BusRoute parent) {
+		return new BusStop(parent, StreetNames.getRandom(), (byte) Util.random(MIN_TIME, MAX_TIME));
+	}
+
+	public static BusStop createDepot(final BusRoute parent) {
+		return new BusStop(parent, String.format("%s DEPOT", parent.name), (byte) Util.random(MIN_TIME, MAX_TIME),
+				true);
 	}
 
 	@Override

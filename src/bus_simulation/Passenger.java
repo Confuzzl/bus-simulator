@@ -85,6 +85,11 @@ public class Passenger {
 			return ADULT_COUNT + ELDERLY_COUNT + STUDENT_COUNT;
 		}
 
+		public double totalRevenue() {
+			return ADULT_COUNT * PASSENGER_TYPE.ADULT.FARE + ELDERLY_COUNT * PASSENGER_TYPE.ELDERLY.FARE
+					+ STUDENT_COUNT * PASSENGER_TYPE.STUDENT.FARE;
+		}
+
 		@Override
 		public String toString() {
 			return String.format("[%d ADULTS, %d ELDERLY, %d STUDENTS]", ADULT_COUNT, ELDERLY_COUNT, STUDENT_COUNT);

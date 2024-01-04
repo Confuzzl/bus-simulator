@@ -6,6 +6,8 @@ public class Simulation {
 
 	public static boolean RUNNING = true;
 
+	public static long TICKS = 0;
+
 	public void start() throws InterruptedException {
 //		Timer timer = new Timer();
 //		timer.scheduleAtFixedRate(new TimerTask() {
@@ -18,16 +20,17 @@ public class Simulation {
 //		while (RUNNING) {
 //			Thread.sleep(SLEEP_TIME);
 //		}
-
 		BusRoute route = new BusRoute();
-
-//		for (int i = 0; i < route.STOP_COUNT; i++) {
+//		for (BusStop current = route.HEAD_STOP; current != null; current = current.next) {
 //			System.out.println(current);
-//			current = current.next;
 //		}
-		for (BusStop current = route.HEAD_STOP; current != null; current = current.next) {
-//			System.out.println(current);
+
+		Bus bus = new Bus(route);
+		for (int i = 0; i < 5; i++) {
+			bus.update();
+			TICKS++;
 		}
+
 //		System.out.println(route.HEAD_STOP.passengerList);
 //		Bus bus = new Bus();
 //		bus.load(route.HEAD_STOP);
