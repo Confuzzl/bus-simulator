@@ -18,10 +18,14 @@ public class BusStop {
 	public final boolean isDepot;
 
 	public BusStop next = null;
-	public final byte timeToNext;
+	private final byte timeToNext;
 
 	public boolean isTail() {
 		return next == null;
+	}
+
+	public byte timeToNext() {
+		return next == null ? 0 : timeToNext;
 	}
 
 	public BusStop(final BusRoute parent, final String name, final byte timeToNext) {
@@ -36,6 +40,10 @@ public class BusStop {
 	}
 
 	public void update() {
+		// No passengers at ends
+		if (isTail() || isDepot) {
+			return;
+		}
 		if (!Util.chance(ARRIVAL_CHANCE)) {
 			return;
 		}
@@ -63,6 +71,6 @@ public class BusStop {
 
 	@Override
 	public String toString() {
-		return String.format("%s -> %s", name, next != null ? next.name : "END");
+		return String.format("%s --%d-> %s", name, timeToNext(), next != null ? next.name : "END");
 	}
 }
