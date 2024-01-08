@@ -50,6 +50,12 @@ public class Passenger {
 			add(passenger, -n);
 		}
 
+		public void remove(final List other) {
+			remove(PASSENGER_TYPE.ADULT, other.ADULT_COUNT);
+			remove(PASSENGER_TYPE.ELDERLY, other.ELDERLY_COUNT);
+			remove(PASSENGER_TYPE.STUDENT, other.STUDENT_COUNT);
+		}
+
 		public void removeAll(final PASSENGER_TYPE passenger) {
 			remove(passenger, switch (passenger) {
 			case ADULT -> ADULT_COUNT;
@@ -58,18 +64,16 @@ public class Passenger {
 			});
 		}
 
-		public void removeRandom() {
+		public PASSENGER_TYPE getRandom() {
 			final double ADULT_CHANCE = ADULT_COUNT / (double) size(), ELDERLY_CHANCE = ELDERLY_COUNT / (double) size(),
 					STUDENT_CHANCE = STUDENT_COUNT / (double) size();
 			if (Util.chance(ADULT_CHANCE + ELDERLY_CHANCE)) {
 				if (Util.chance(ADULT_CHANCE / (ADULT_CHANCE + ELDERLY_CHANCE))) {
-					remove(PASSENGER_TYPE.ADULT);
-				} else {
-					remove(PASSENGER_TYPE.ELDERLY);
+					return PASSENGER_TYPE.ADULT;
 				}
-			} else {
-				remove(PASSENGER_TYPE.STUDENT);
+				return PASSENGER_TYPE.ELDERLY;
 			}
+			return PASSENGER_TYPE.STUDENT;
 		}
 
 		public void transferTo(final List other, final PASSENGER_TYPE passenger) {

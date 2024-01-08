@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Simulation {
-	public static final byte ROUTE_COUNT = 1;
+	public static final byte ROUTE_COUNT = 5;
 	public static final short SLEEP_TIME = 1_000;
 
 	public static boolean RUNNING = true;
@@ -22,19 +22,19 @@ public class Simulation {
 //				
 //			}
 //		}, 0, 1000);
-//		while (RUNNING) {
-//			Thread.sleep(SLEEP_TIME);
-//		}
 
 		for (int i = 0; i < ROUTE_COUNT; i++) {
 			ROUTES.add(new BusRoute());
 		}
-		for (int i = 0; i < 100; i++) {
+
+		while (RUNNING) {
 			ROUTES.forEach((final BusRoute route) -> {
 				route.update();
 			});
 			TICKS++;
+			Thread.sleep(SLEEP_TIME);
 		}
+
 		ROUTES.forEach((final BusRoute route) -> {
 			route.end();
 		});

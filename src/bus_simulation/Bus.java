@@ -43,7 +43,8 @@ public class Bus {
 
 	private void log(final String str) {
 		try {
-			logger.write(String.format("%d:\t%s\t%s\t%s\t%s\n", Simulation.TICKS, status, timeLeft, prevStop, str));
+			logger.write(String.format("%d:\t%s\t%s\t%s\tPASSENGERS: %s\t%s\n", Simulation.TICKS, status, timeLeft,
+					prevStop, passengerList, str));
 		} catch (final IOException e) {
 		}
 	}
@@ -68,9 +69,17 @@ public class Bus {
 				passengerList.reset();
 				break;
 			}
+			final Passenger.List unboarders = getUnload(prevStop);
+			final Passenger.List boarders = getLoad(prevStop);
+
+			log(String.format("UNBOARDING: %s\tBOARDING: %s", unboarders, boarders));
+
+			passengerList.remove(unboarders);
+			revenue += boarders.totalRevenue();
+			passengerList.addAll(boarders);
+
 			status = STATUS.IN_PROGRESS;
-			unload(prevStop);
-			load(prevStop);
+
 		}
 		case AT_END -> {
 			log("");
@@ -84,14 +93,20 @@ public class Bus {
 		nextStop = nextStop.next;
 	}
 
-	public void unload(final BusStop stop) {
+	public Passenger.List getUnload(final BusStop stop) {
+		final Passenger.List out = new Passenger.List();
 		if (Util.chance(0.1)) {
-			return;
+			return out;
 		}
 		final int UNBOARDERS = Util.random(0, passengerList.size());
+		final Passenger.List copy = new Passenger.List();
+		copy.addAll(passengerList);
 		for (int i = 0; i < UNBOARDERS; i++) {
-			passengerList.removeRandom();
+			final PASSENGER_TYPE unboarder = copy.getRandom();
+			out.add(unboarder);
+			copy.remove(unboarder);
 		}
+		return out;
 	}
 
 	private int combinedSize(final Passenger.List other) {
@@ -102,7 +117,7 @@ public class Bus {
 		return MAX_CAPACITY - combinedSize(other);
 	}
 
-	public void load(final BusStop stop) {
+	public Passenger.List getLoad(final BusStop stop) {
 		final Passenger.List newPassengers = new Passenger.List();
 		if (stop.passengerList.size() <= combinedRemainingCapacity(newPassengers)) {
 			newPassengers.addAll(stop.passengerList);
@@ -125,8 +140,7 @@ public class Bus {
 				}
 			}
 		}
-		revenue += newPassengers.totalRevenue();
-		passengerList.addAll(newPassengers);
+		return newPassengers;
 	}
 
 	public void end() {

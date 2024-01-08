@@ -1,101 +1,22 @@
-0:	AT_STOP	2	ROUTE A DEPOT --2-> Bay 25th St	
-1:	IN_PROGRESS	2	ROUTE A DEPOT --2-> Bay 25th St	
-2:	IN_PROGRESS	1	ROUTE A DEPOT --2-> Bay 25th St	
-3:	ARRIVING	0	ROUTE A DEPOT --2-> Bay 25th St	
-4:	AT_STOP	3	Bay 25th St --3-> Kimball St	
-5:	IN_PROGRESS	3	Bay 25th St --3-> Kimball St	
-6:	IN_PROGRESS	2	Bay 25th St --3-> Kimball St	
-7:	IN_PROGRESS	1	Bay 25th St --3-> Kimball St	
-8:	ARRIVING	0	Bay 25th St --3-> Kimball St	
-9:	AT_STOP	3	Kimball St --3-> 26th St	
-10:	IN_PROGRESS	3	Kimball St --3-> 26th St	
-11:	IN_PROGRESS	2	Kimball St --3-> 26th St	
-12:	IN_PROGRESS	1	Kimball St --3-> 26th St	
-13:	ARRIVING	0	Kimball St --3-> 26th St	
-14:	AT_STOP	2	26th St --2-> W 1st St	
-15:	IN_PROGRESS	2	26th St --2-> W 1st St	
-16:	IN_PROGRESS	1	26th St --2-> W 1st St	
-17:	ARRIVING	0	26th St --2-> W 1st St	
-18:	AT_STOP	4	W 1st St --4-> S 5th Pl	
-19:	IN_PROGRESS	4	W 1st St --4-> S 5th Pl	
-20:	IN_PROGRESS	3	W 1st St --4-> S 5th Pl	
-21:	IN_PROGRESS	2	W 1st St --4-> S 5th Pl	
-22:	IN_PROGRESS	1	W 1st St --4-> S 5th Pl	
-23:	ARRIVING	0	W 1st St --4-> S 5th Pl	
-24:	AT_STOP	2	S 5th Pl --2-> E 55th St	
-25:	IN_PROGRESS	2	S 5th Pl --2-> E 55th St	
-26:	IN_PROGRESS	1	S 5th Pl --2-> E 55th St	
-27:	ARRIVING	0	S 5th Pl --2-> E 55th St	
-28:	AT_STOP	3	E 55th St --3-> Hammerhead Ave	
-29:	IN_PROGRESS	3	E 55th St --3-> Hammerhead Ave	
-30:	IN_PROGRESS	2	E 55th St --3-> Hammerhead Ave	
-31:	IN_PROGRESS	1	E 55th St --3-> Hammerhead Ave	
-32:	ARRIVING	0	E 55th St --3-> Hammerhead Ave	
-33:	AT_STOP	2	Hammerhead Ave --2-> Judge St	
-34:	IN_PROGRESS	2	Hammerhead Ave --2-> Judge St	
-35:	IN_PROGRESS	1	Hammerhead Ave --2-> Judge St	
-36:	ARRIVING	0	Hammerhead Ave --2-> Judge St	
-37:	AT_STOP	3	Judge St --3-> Etna St	
-38:	IN_PROGRESS	3	Judge St --3-> Etna St	
-39:	IN_PROGRESS	2	Judge St --3-> Etna St	
-40:	IN_PROGRESS	1	Judge St --3-> Etna St	
-41:	ARRIVING	0	Judge St --3-> Etna St	
-42:	AT_STOP	5	Etna St --5-> Lake Ave	
-43:	IN_PROGRESS	5	Etna St --5-> Lake Ave	
-44:	IN_PROGRESS	4	Etna St --5-> Lake Ave	
-45:	IN_PROGRESS	3	Etna St --5-> Lake Ave	
-46:	IN_PROGRESS	2	Etna St --5-> Lake Ave	
-47:	IN_PROGRESS	1	Etna St --5-> Lake Ave	
-48:	ARRIVING	0	Etna St --5-> Lake Ave	
-49:	AT_STOP	3	Lake Ave --3-> Newport St	
-50:	IN_PROGRESS	3	Lake Ave --3-> Newport St	
-51:	IN_PROGRESS	2	Lake Ave --3-> Newport St	
-52:	IN_PROGRESS	1	Lake Ave --3-> Newport St	
-53:	ARRIVING	0	Lake Ave --3-> Newport St	
-54:	AT_STOP	3	Newport St --3-> W 4th St	
-55:	IN_PROGRESS	3	Newport St --3-> W 4th St	
-56:	IN_PROGRESS	2	Newport St --3-> W 4th St	
-57:	IN_PROGRESS	1	Newport St --3-> W 4th St	
-58:	ARRIVING	0	Newport St --3-> W 4th St	
-59:	AT_STOP	0	W 4th St --0-> END	
-60:	AT_END	0	W 4th St --0-> END	
-61:	AT_END	0	W 4th St --0-> END	
-62:	AT_END	0	W 4th St --0-> END	
-63:	AT_END	0	W 4th St --0-> END	
-64:	AT_END	0	W 4th St --0-> END	
-65:	AT_END	0	W 4th St --0-> END	
-66:	AT_END	0	W 4th St --0-> END	
-67:	AT_END	0	W 4th St --0-> END	
-68:	AT_END	0	W 4th St --0-> END	
-69:	AT_END	0	W 4th St --0-> END	
-70:	AT_END	0	W 4th St --0-> END	
-71:	AT_END	0	W 4th St --0-> END	
-72:	AT_END	0	W 4th St --0-> END	
-73:	AT_END	0	W 4th St --0-> END	
-74:	AT_END	0	W 4th St --0-> END	
-75:	AT_END	0	W 4th St --0-> END	
-76:	AT_END	0	W 4th St --0-> END	
-77:	AT_END	0	W 4th St --0-> END	
-78:	AT_END	0	W 4th St --0-> END	
-79:	AT_END	0	W 4th St --0-> END	
-80:	AT_END	0	W 4th St --0-> END	
-81:	AT_END	0	W 4th St --0-> END	
-82:	AT_END	0	W 4th St --0-> END	
-83:	AT_END	0	W 4th St --0-> END	
-84:	AT_END	0	W 4th St --0-> END	
-85:	AT_END	0	W 4th St --0-> END	
-86:	AT_END	0	W 4th St --0-> END	
-87:	AT_END	0	W 4th St --0-> END	
-88:	AT_END	0	W 4th St --0-> END	
-89:	AT_END	0	W 4th St --0-> END	
-90:	AT_END	0	W 4th St --0-> END	
-91:	AT_END	0	W 4th St --0-> END	
-92:	AT_END	0	W 4th St --0-> END	
-93:	AT_END	0	W 4th St --0-> END	
-94:	AT_END	0	W 4th St --0-> END	
-95:	AT_END	0	W 4th St --0-> END	
-96:	AT_END	0	W 4th St --0-> END	
-97:	AT_END	0	W 4th St --0-> END	
-98:	AT_END	0	W 4th St --0-> END	
-99:	AT_END	0	W 4th St --0-> END	
-TOTAL REVENUE GENERATED: 327.50
+0:	AT_STOP	5	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	UNBOARDING: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	BOARDING: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]
+1:	IN_PROGRESS	5	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+2:	IN_PROGRESS	4	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+3:	IN_PROGRESS	3	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+4:	IN_PROGRESS	2	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+5:	IN_PROGRESS	1	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+6:	ARRIVING	0	ROUTE A DEPOT --5-> Ingraham St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+7:	AT_STOP	2	Ingraham St --2-> Meadow St	PASSENGERS: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	UNBOARDING: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	BOARDING: [6 ADULTS, 0 ELDERLY, 0 STUDENTS]
+8:	IN_PROGRESS	2	Ingraham St --2-> Meadow St	PASSENGERS: [6 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+9:	IN_PROGRESS	1	Ingraham St --2-> Meadow St	PASSENGERS: [6 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+10:	ARRIVING	0	Ingraham St --2-> Meadow St	PASSENGERS: [6 ADULTS, 0 ELDERLY, 0 STUDENTS]	
+11:	AT_STOP	2	Meadow St --2-> 41st St	PASSENGERS: [6 ADULTS, 0 ELDERLY, 0 STUDENTS]	UNBOARDING: [0 ADULTS, 0 ELDERLY, 0 STUDENTS]	BOARDING: [11 ADULTS, 1 ELDERLY, 2 STUDENTS]
+12:	IN_PROGRESS	2	Meadow St --2-> 41st St	PASSENGERS: [17 ADULTS, 1 ELDERLY, 2 STUDENTS]	
+13:	IN_PROGRESS	1	Meadow St --2-> 41st St	PASSENGERS: [17 ADULTS, 1 ELDERLY, 2 STUDENTS]	
+14:	ARRIVING	0	Meadow St --2-> 41st St	PASSENGERS: [17 ADULTS, 1 ELDERLY, 2 STUDENTS]	
+15:	AT_STOP	5	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [17 ADULTS, 1 ELDERLY, 2 STUDENTS]	UNBOARDING: [7 ADULTS, 0 ELDERLY, 0 STUDENTS]	BOARDING: [9 ADULTS, 1 ELDERLY, 1 STUDENTS]
+16:	IN_PROGRESS	5	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
+17:	IN_PROGRESS	4	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
+18:	IN_PROGRESS	3	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
+19:	IN_PROGRESS	2	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
+20:	IN_PROGRESS	1	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
+21:	ARRIVING	0	41st St --5-> Our Lady Of Snows Square	PASSENGERS: [19 ADULTS, 2 ELDERLY, 3 STUDENTS]	
