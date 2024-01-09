@@ -65,8 +65,7 @@ public class BusStop {
 	}
 
 	public static BusStop createDepot(final BusRoute parent) {
-		return new BusStop(parent, String.format("%s DEPOT", parent.name), (byte) Util.random(MIN_TIME, MAX_TIME),
-				true);
+		return new BusStop(parent, String.format("%s DEPOT", parent.name), (byte) 2, true);
 	}
 
 	@Override
