@@ -11,7 +11,7 @@ public class BusRoute {
 
 	public final BusStop DEPOT;
 	public final BusStop HEAD_STOP;
-	public byte STOP_COUNT;
+	public final byte STOP_COUNT;
 
 	public final String name;
 

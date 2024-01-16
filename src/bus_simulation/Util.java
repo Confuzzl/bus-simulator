@@ -9,7 +9,7 @@ public class Util {
 		return Math.random() < chance;
 	}
 
-	public static <T> T randomElement(T[] array) {
+	public static <T> T randomElement(final T[] array) {
 		return array[random(0, array.length - 1)];
 	}
 }

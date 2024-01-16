@@ -28,11 +28,11 @@ public class Simulation {
 	public static final short SLEEP_TIME = 1_000;
 
 	public static long TICKS = 0;
-	public static long MAX_TICKS = 5;
+	public static final long MAX_TICKS = 5;
 
 	public static final Set<BusRoute> ROUTES = new HashSet<BusRoute>();
 
-	public static KillThread KILLTHREAD = new KillThread();
+	public static final KillThread KILLTHREAD = new KillThread();
 
 	public static void start() throws InterruptedException {
 		KILLTHREAD.start();

@@ -6,11 +6,6 @@ public class Passenger {
 		public short ELDERLY_COUNT = 0;
 		public short STUDENT_COUNT = 0;
 
-//		void addAll(final Collection<PASSENGER_TYPE> passengers) {
-//			passengers.forEach((final PASSENGER_TYPE passenger) -> {
-//				add(passenger);
-//			});
-//		}
 		public void addAll(final List passengerList) {
 			add(PASSENGER_TYPE.ADULT, passengerList.ADULT_COUNT);
 			add(PASSENGER_TYPE.ELDERLY, passengerList.ELDERLY_COUNT);
