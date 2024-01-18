@@ -12,7 +12,7 @@ public class Simulation {
 
 		@Override
 		public void run() {
-			System.out.println("PRESS ENTER TO END SIMULATION");
+			System.out.println("PRESS ENTER TO KILL");
 			scanner.nextLine();
 			end();
 		}
@@ -28,7 +28,7 @@ public class Simulation {
 	public static final short SLEEP_TIME = 1_000;
 
 	public static long TICKS = 0;
-	public static final long MAX_TICKS = 5;
+	public static final long MAX_TICKS = 60 * 24 * 7;
 
 	public static final Set<BusRoute> ROUTES = new HashSet<BusRoute>();
 
@@ -44,17 +44,12 @@ public class Simulation {
 		while (KILLTHREAD.running) {
 			if (TICKS >= MAX_TICKS) {
 				KILLTHREAD.end();
+				KILLTHREAD.interrupt();
 			}
-
-			ROUTES.forEach((final BusRoute route) -> {
-				route.update();
-			});
+			ROUTES.forEach(BusRoute::update);
 			TICKS++;
 			Thread.sleep(SLEEP_TIME);
 		}
-
-		ROUTES.forEach((final BusRoute route) -> {
-			route.end();
-		});
+		ROUTES.forEach(BusRoute::end);
 	}
 }
