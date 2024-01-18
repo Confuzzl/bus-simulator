@@ -123,7 +123,9 @@ public class Bus {
 			newPassengers.addAll(stop.passengerList);
 			stop.passengerList.reset();
 		} else {
-			final int elderlyToBoard = Math.clamp(stop.passengerList.ELDERLY_COUNT, 0,
+//			final int elderlyToBoard = Math.clamp(stop.passengerList.ELDERLY_COUNT, 0,
+//					combinedRemainingCapacity(newPassengers));
+			final int elderlyToBoard = Util.clamp(0, stop.passengerList.ELDERLY_COUNT,
 					combinedRemainingCapacity(newPassengers));
 			stop.passengerList.transferTo(newPassengers, PASSENGER_TYPE.ELDERLY, elderlyToBoard);
 			for (int i = 0; i < stop.passengerList.size(); i++) {
